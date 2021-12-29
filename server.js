@@ -11,9 +11,9 @@ app.use(express.json());
 app.use(express.static('public'));
 
 //generate ids
-//const generateUniqueId = require('generate-unique-id');
+const generateUniqueId = require('generate-unique-id');
 
-//create new notes
+//Create New Note
 function createNewNote(body, notesArray) {
     const note = body;
     notesArray.push(note);
@@ -22,10 +22,10 @@ function createNewNote(body, notesArray) {
         JSON.stringify({ notes: notesArray }, null, 2)
     );
     return note;
-}; 
+};  
 
 //create routes (maybe move into own file later)
-app.get('/', (req, res) => {
+app.get('/', (req, res) => {    
     res.sendFile(path.join(__dirname, './Develop/public/index.html'));
 });
 
@@ -42,7 +42,7 @@ app.post('/api/notes', (req, res) => {
     const note = createNewNote(req.body, notes);
     res.json(note);
 });
-
+    
 //get delete ability worth bonus points
 app.delete('/api/notes/:id', (req, res) => {
     const { id } = req.params;
