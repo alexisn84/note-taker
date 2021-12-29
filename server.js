@@ -4,7 +4,7 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const { notes } = require("./Develop/db/db.json");
+const { notes } = require("./db/db.json");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -18,7 +18,7 @@ function createNewNote(body, notesArray) {
     const note = body;
     notesArray.push(note);
     fs.writeFileSync(
-        path.join(__dirname, './Develop/db/db.json'),
+        path.join(__dirname, './db/db.json'),
         JSON.stringify({ notes: notesArray }, null, 2)
     );
     return note;
@@ -26,11 +26,11 @@ function createNewNote(body, notesArray) {
 
 //create routes (maybe move into own file later)
 app.get('/', (req, res) => {    
-    res.sendFile(path.join(__dirname, './Develop/public/index.html'));
+    res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
 app.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, './Develop/public/notes.html'));
+    res.sendFile(path.join(__dirname, './public/notes.html'));
 });
 
 app.get('/api/notes', (req, res) => {
