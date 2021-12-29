@@ -18,7 +18,9 @@ This application allows the user to enter notes that include a Title and descrip
 Click [here](https://aenotetaker.herokuapp.com/notes) to use the actual application in real time.
 
 ### Images
-
+<img src="https://github.com/alexisn84/note-taker/blob/main/public/assets/Images/homeimage.jpg">
+<img src="https://github.com/alexisn84/note-taker/blob/main/public/assets/Images/enter%20text.jpg">
+<img src="https://github.com/alexisn84/note-taker/blob/main/public/assets/Images/saved%20note%20on%20left.jpg">
 
 ### Credits
 In order to get the Delete function to work, I used this code at https://www.tabnine.com/code/javascript/functions/express/Express/delete
